@@ -14,6 +14,7 @@ class SaveViewController: UIViewController {
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var categoryTextField: UITextField!
     @IBOutlet var wordTextField: UITextField!
+    @IBOutlet var saveButton: UIButton!
     
     let categoryPickerView = UIPickerView()
     var pickerIndex: Int = 0
@@ -23,7 +24,9 @@ class SaveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel.text = time
+        saveButton.layer.cornerRadius = 20
         setupCategoryPickerView()
+        setupCategoryTextFiled()
     }
     
     
@@ -31,7 +34,7 @@ class SaveViewController: UIViewController {
         addData()
         dismiss(animated: true, completion: nil)
     }
-    
+
     func addData() {
         let reportModel = ReportModel()
         reportModel.date = dateTextField.text ?? ""
@@ -41,17 +44,11 @@ class SaveViewController: UIViewController {
             realm?.add(reportModel)
         }
     }
-    //    ピッカービューメソッド
-       
-       func setupDatePickerView() {
-        DatePickerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: DatePickerView.bounds.size.height)
-           let DatePV = UIView(frame: DatePickerView.bounds)
-        DatePV.backgroundColor = UIColor.white
-        DatePV.addSubview(DatePickerView)
-           
-           // UITextField編集時に表示されるキーボードをpickerViewに置き換える
-           dateTextField.inputView = DatePV
+    
+    func setupCategoryTextFiled() {
+           categoryTextField.delegate = self
        }
+    //    ピッカービューメソッド
        
        func setupCategoryPickerView() {
            categoryPickerView.delegate = self
@@ -65,7 +62,6 @@ class SaveViewController: UIViewController {
            // UITextField編集時に表示されるキーボードをpickerViewに置き換える
            categoryTextField.inputView = categoryPV
        }
-  
 
 }
 extension SaveViewController: UIPickerViewDelegate {

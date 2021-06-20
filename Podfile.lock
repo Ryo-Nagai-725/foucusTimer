@@ -3,6 +3,7 @@ PODS:
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
   - lottie-ios (3.1.9)
+  - PanModal (1.2.7)
   - Realm (3.18.0):
     - Realm/Headers (= 3.18.0)
   - Realm/Headers (3.18.0)
@@ -12,6 +13,7 @@ PODS:
 DEPENDENCIES:
   - Charts
   - lottie-ios
+  - PanModal
   - Realm
   - RealmSwift
 
@@ -19,15 +21,17 @@ SPEC REPOS:
   trunk:
     - Charts
     - lottie-ios
+    - PanModal
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
   RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
 
-PODFILE CHECKSUM: b7a1e39f72afeaa0f48e05ea8ca8813f00857e97
+PODFILE CHECKSUM: da039894953c7756c51b3bcca685f8005d9d7831
 
 COCOAPODS: 1.10.0

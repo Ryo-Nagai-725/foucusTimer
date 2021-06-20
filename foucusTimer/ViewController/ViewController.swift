@@ -8,11 +8,15 @@
 import UIKit
 import AVFoundation
 import RealmSwift
+import PanModal
 
 class ViewController: UIViewController {
 
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var monsterImage: UIImageView!
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
+    @IBOutlet var growButton: UIButton!
     var audioPlayer: AVAudioPlayer?
     var audioPlayer2: AVAudioPlayer?
     
@@ -26,6 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         levelUpMusic()
         endMusic()
+        corner()
     }
 
 
@@ -36,6 +41,9 @@ class ViewController: UIViewController {
     @IBAction func stopButton(_ sender: Any) {
         stopTimer()
         audioPlayer2?.play()
+    }
+    @IBAction func growButton(_ sender: Any) {
+        presentPanModal(GrowViewController())
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,6 +81,8 @@ class ViewController: UIViewController {
                    selector: #selector(self.countTimer),
                    userInfo: nil,
                    repeats: true)
+        startButton.isEnabled = false
+        startButton.alpha = 0.5
     }
     
     func stopTimer() {
@@ -80,7 +90,9 @@ class ViewController: UIViewController {
         addData()
         let userData = realm.objects(TimerModel.self)
         print("🟥全てのデータ\(userData)")
-        timerSecond = 0
+        timerLabel.text = "00:00:00"
+        startButton.alpha = 1
+        startButton.isEnabled = true
     }
     
     func timeString(time: TimeInterval) -> String {
@@ -101,6 +113,12 @@ class ViewController: UIViewController {
         try! realm.write {
             realm.add(timerModel)
         }
+    }
+    
+    func corner() {
+        startButton.layer.cornerRadius = 50
+        stopButton.layer.cornerRadius = 50
+        growButton.layer.cornerRadius = 50
     }
     
     @objc func countTimer() {

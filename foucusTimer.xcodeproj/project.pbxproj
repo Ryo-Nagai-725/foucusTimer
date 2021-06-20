@@ -13,6 +13,7 @@
 		2A11A91B267B8AD7001ED27B /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A11A91A267B8AD7001ED27B /* NSObjectExt.swift */; };
 		2A11A91E267B8B27001ED27B /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A11A91C267B8B27001ED27B /* ReportTableViewCell.swift */; };
 		2A11A91F267B8B27001ED27B /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A11A91D267B8B27001ED27B /* ReportTableViewCell.xib */; };
+		2A14F04A267F71D20051F34F /* GrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14F049267F71D10051F34F /* GrowViewController.swift */; };
 		2A425886267F171D00F3FE7B /* categoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425885267F171D00F3FE7B /* categoryList.swift */; };
 		2A85DD522666173000F7B174 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A85DD512666173000F7B174 /* TimerManager.swift */; };
 		2A85DD54266D144900F7B174 /* levelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A85DD53266D144900F7B174 /* levelUp.wav */; };
@@ -33,6 +34,7 @@
 		2A11A91A267B8AD7001ED27B /* NSObjectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExt.swift; sourceTree = "<group>"; };
 		2A11A91C267B8B27001ED27B /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		2A11A91D267B8B27001ED27B /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		2A14F049267F71D10051F34F /* GrowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowViewController.swift; sourceTree = "<group>"; };
 		2A425885267F171D00F3FE7B /* categoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryList.swift; sourceTree = "<group>"; };
 		2A85DD512666173000F7B174 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		2A85DD53266D144900F7B174 /* levelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelUp.wav; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				2AC88F58265CD66B007772B1 /* ViewController.swift */,
 				2A11A90F266E7520001ED27B /* ReportViewController.swift */,
 				2A11A917267B7C67001ED27B /* SaveViewController.swift */,
+				2A14F049267F71D10051F34F /* GrowViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				2A11A912267B7567001ED27B /* ReportModel.swift in Sources */,
 				2A11A910266E7520001ED27B /* ReportViewController.swift in Sources */,
 				2A11A91B267B8AD7001ED27B /* NSObjectExt.swift in Sources */,
+				2A14F04A267F71D20051F34F /* GrowViewController.swift in Sources */,
 				2AC88F57265CD66B007772B1 /* SceneDelegate.swift in Sources */,
 				2A11A918267B7C67001ED27B /* SaveViewController.swift in Sources */,
 			);
@@ -437,7 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nagai-ryo.foucusTimer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nagai-ryo.foucusTimer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

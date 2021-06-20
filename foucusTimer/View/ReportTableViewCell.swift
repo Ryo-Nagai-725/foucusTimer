@@ -9,6 +9,7 @@ import UIKit
 
 class ReportTableViewCell: UITableViewCell {
 
+
     @IBOutlet var view: UIView!
     @IBOutlet var monsterImage: UIImageView!
     @IBOutlet var dateLabel: UILabel!
@@ -22,7 +23,7 @@ class ReportTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = 20
         
     }
     

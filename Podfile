@@ -11,4 +11,5 @@ target 'foucusTimer' do
     pod 'RealmSwift'
     pod 'Charts'
     pod 'lottie-ios'
+    pod 'PanModal'
 end
