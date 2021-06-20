@@ -1,0 +1,33 @@
+PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - lottie-ios (3.1.9)
+  - Realm (3.18.0):
+    - Realm/Headers (= 3.18.0)
+  - Realm/Headers (3.18.0)
+  - RealmSwift (3.18.0):
+    - Realm (= 3.18.0)
+
+DEPENDENCIES:
+  - Charts
+  - lottie-ios
+  - Realm
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - lottie-ios
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
+  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
+
+PODFILE CHECKSUM: b7a1e39f72afeaa0f48e05ea8ca8813f00857e97
+
+COCOAPODS: 1.10.0
