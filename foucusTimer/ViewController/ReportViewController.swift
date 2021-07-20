@@ -9,17 +9,15 @@ import Charts
 import RealmSwift
 class ReportViewController: UIViewController {
     
-    @IBOutlet var LineChartView: LineChartView!
     @IBOutlet var PieChartView: PieChartView!
     @IBOutlet var reportTableView: UITableView!
     
     let realm = try! Realm()
-    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [10.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+    let months = ["勉強", "仕事", "趣味", "娯楽", "読書", "その他"]
+        let unitsSold = [40.0, 10.0, 16.0, 13.0, 12.0, 16.0]
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
-        setLineGraph()
         setPieChart()
     }
     
@@ -29,19 +27,7 @@ class ReportViewController: UIViewController {
         reportTableView.layer.cornerRadius = 20.0
         reportTableView.register(UINib(nibName: ReportTableViewCell.className, bundle: nil), forCellReuseIdentifier: ReportTableViewCell.className)
         }
-    
-    func setLineGraph(){
-            var entry = [ChartDataEntry]()
-            
-            for (i,d) in unitsSold.enumerated(){
-                entry.append(ChartDataEntry(x: Double(i),y: d))
-            }
-            
-            let dataset = LineChartDataSet(entries: entry,label: "Units Sold")
-                    
-        LineChartView.data = LineChartData(dataSet: dataset)
-        LineChartView.chartDescription?.text = "Item Sold Chart"
-        }
+
     func setPieChart(){
             
             var dataEntries: [ChartDataEntry] = []

@@ -32,9 +32,26 @@ class SaveViewController: UIViewController {
     
     @IBAction func SaveButton(_ sender: Any) {
         addData()
+        let userData = realm?.objects(ReportModel.self)
+        print("全てのデータ\(userData)")
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func shareButton(_ sender: Any) {
+        let timeData = realm?.objects(TimerModel.self)
+        let text = """
+                育てて集中！
+                日付：\(dateTextField.text ?? "")
+                集中した時間：\(timeLabel.text ?? "")
+                カテゴリー：\(categoryTextField.text ?? "")
+                ひとこと：\(wordTextField.text ?? "")
+                成長した木
+                """
+                let shareItems = [text] as [Any]
+                let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+                present(controller, animated: true, completion: nil)
+                
+    }
     func addData() {
         let reportModel = ReportModel()
         reportModel.date = dateTextField.text ?? ""

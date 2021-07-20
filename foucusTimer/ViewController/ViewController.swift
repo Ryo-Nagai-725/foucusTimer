@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var startButton: UIButton!
     @IBOutlet var stopButton: UIButton!
     @IBOutlet var growButton: UIButton!
+    @IBOutlet var treeBackGroundView: UIView!
     var audioPlayer: AVAudioPlayer?
     var audioPlayer2: AVAudioPlayer?
     
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
     //ミュージックメソッド
     func levelUpMusic() {
         //プロジェクト内ににあるパスを参照
-        let path = Bundle.main.path(forResource: "levelUp", ofType: "wav")
+        let path = Bundle.main.path(forResource: "growthSound", ofType: "mp3")
         let url = URL(fileURLWithPath: path!)
         try! audioPlayer = AVAudioPlayer(contentsOf: url)
         //事前に一度再生をしておかないとず正しく再生されないことがあるのでこいつを呼び出しておく
@@ -119,6 +120,7 @@ class ViewController: UIViewController {
         startButton.layer.cornerRadius = 50
         stopButton.layer.cornerRadius = 50
         growButton.layer.cornerRadius = 50
+        treeBackGroundView.layer.cornerRadius = 20
     }
     
     @objc func countTimer() {
@@ -126,19 +128,28 @@ class ViewController: UIViewController {
         print(timerSecond)
         updateTimer(second: timerSecond)
         if timerSecond == 10 {
-            monsterImage.image = UIImage(named: "images")
+            monsterImage.image = UIImage(named: "tree3")
             audioPlayer?.play()
         } else if timerSecond == 20 {
-            monsterImage.image = UIImage(named: "froo")
+            monsterImage.image = UIImage(named: "tree4")
             audioPlayer?.play()
         } else if timerSecond == 30 {
-            monsterImage.image = UIImage(named: "unnamed")
+            monsterImage.image = UIImage(named: "tree5")
             audioPlayer?.play()
         } else if timerSecond == 40 {
-            monsterImage.image = UIImage(named: "C6WogxtUwAAEZc-")
+            monsterImage.image = UIImage(named: "tree6")
             audioPlayer?.play()
         } else if timerSecond == 50 {
-            monsterImage.image = UIImage(named: "slime")
+            monsterImage.image = UIImage(named: "tree7")
+            audioPlayer?.play()
+        } else if timerSecond == 60 {
+            monsterImage.image = UIImage(named: "tree8")
+            audioPlayer?.play()
+        } else if timerSecond == 70 {
+            monsterImage.image = UIImage(named: "tree9")
+            audioPlayer?.play()
+        } else if timerSecond == 80 {
+            monsterImage.image = UIImage(named: "tree10")
             audioPlayer?.play()
         }
     }

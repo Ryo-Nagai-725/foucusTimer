@@ -12,4 +12,6 @@ target 'foucusTimer' do
     pod 'Charts'
     pod 'lottie-ios'
     pod 'PanModal'
+    pod 'FSCalendar'
+    pod 'CalculateCalendarLogic'
 end
