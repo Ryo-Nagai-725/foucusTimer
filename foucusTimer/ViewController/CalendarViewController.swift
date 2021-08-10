@@ -42,9 +42,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, FSCalendarDat
         let day = tmpDate.component(.day, from: date)
         tapDateLabel.text = "\(year)/\(month)/\(day)"
     }
-
-    
 }
+    
 
 extension CalendarViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,4 +64,5 @@ extension CalendarViewController: UITableViewDataSource {
         return todoData.count
     }
 }
+
 

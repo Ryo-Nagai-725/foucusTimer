@@ -14,7 +14,7 @@
 		2A11A91E267B8B27001ED27B /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A11A91C267B8B27001ED27B /* ReportTableViewCell.swift */; };
 		2A11A91F267B8B27001ED27B /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A11A91D267B8B27001ED27B /* ReportTableViewCell.xib */; };
 		2A14F04A267F71D20051F34F /* GrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14F049267F71D10051F34F /* GrowViewController.swift */; };
-		2A425886267F171D00F3FE7B /* categoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425885267F171D00F3FE7B /* categoryList.swift */; };
+		2A47D5A526C0CC0B00406B46 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47D5A426C0CC0A00406B46 /* TimeLineViewController.swift */; };
 		2A85DD522666173000F7B174 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A85DD512666173000F7B174 /* TimerManager.swift */; };
 		2A85DD54266D144900F7B174 /* levelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A85DD53266D144900F7B174 /* levelUp.wav */; };
 		2A85DD56266E6B0300F7B174 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A85DD55266E6B0300F7B174 /* end.mp3 */; };
@@ -40,7 +40,7 @@
 		2A11A91C267B8B27001ED27B /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		2A11A91D267B8B27001ED27B /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		2A14F049267F71D10051F34F /* GrowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowViewController.swift; sourceTree = "<group>"; };
-		2A425885267F171D00F3FE7B /* categoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryList.swift; sourceTree = "<group>"; };
+		2A47D5A426C0CC0A00406B46 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		2A85DD512666173000F7B174 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		2A85DD53266D144900F7B174 /* levelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelUp.wav; sourceTree = "<group>"; };
 		2A85DD55266E6B0300F7B174 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
@@ -136,7 +136,6 @@
 			children = (
 				2A85DD512666173000F7B174 /* TimerManager.swift */,
 				2A11A911267B7567001ED27B /* RealmModel.swift */,
-				2A425885267F171D00F3FE7B /* categoryList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +149,7 @@
 				2A14F049267F71D10051F34F /* GrowViewController.swift */,
 				2AD4D9D026A6A386000427A6 /* CalendarViewController.swift */,
 				2AD4D9D626A6B277000427A6 /* AddTodoViewController.swift */,
+				2A47D5A426C0CC0A00406B46 /* TimeLineViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -292,7 +292,6 @@
 			files = (
 				2AD4D9D126A6A386000427A6 /* CalendarViewController.swift in Sources */,
 				2A11A91E267B8B27001ED27B /* ReportTableViewCell.swift in Sources */,
-				2A425886267F171D00F3FE7B /* categoryList.swift in Sources */,
 				2AC88F59265CD66B007772B1 /* ViewController.swift in Sources */,
 				2A85DD522666173000F7B174 /* TimerManager.swift in Sources */,
 				2AC88F55265CD66B007772B1 /* AppDelegate.swift in Sources */,
@@ -300,6 +299,7 @@
 				2A11A910266E7520001ED27B /* ReportViewController.swift in Sources */,
 				2AD4D9D726A6B277000427A6 /* AddTodoViewController.swift in Sources */,
 				2A11A91B267B8AD7001ED27B /* NSObjectExt.swift in Sources */,
+				2A47D5A526C0CC0B00406B46 /* TimeLineViewController.swift in Sources */,
 				2A14F04A267F71D20051F34F /* GrowViewController.swift in Sources */,
 				2AC88F57265CD66B007772B1 /* SceneDelegate.swift in Sources */,
 				2AD4D9D426A6A963000427A6 /* CalendarTableViewCell.swift in Sources */,
@@ -458,7 +458,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nagai-ryo.foucusTimer";
+				PRODUCT_BUNDLE_IDENTIFIER = "nagai-ryo.foucusTimer20210809";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -478,7 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nagai-ryo.foucusTimer";
+				PRODUCT_BUNDLE_IDENTIFIER = "nagai-ryo.foucusTimer20210809";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

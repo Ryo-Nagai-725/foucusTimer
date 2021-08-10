@@ -10,24 +10,34 @@ import RealmSwift
 class ReportViewController: UIViewController {
     
     @IBOutlet var PieChartView: PieChartView!
-    @IBOutlet var reportTableView: UITableView!
+    @IBOutlet var backgroundView: UIView!
     
     let realm = try! Realm()
     let months = ["勉強", "仕事", "趣味", "娯楽", "読書", "その他"]
         let unitsSold = [40.0, 10.0, 16.0, 13.0, 12.0, 16.0]
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
         setPieChart()
+        self.view.sendSubviewToBack(backgroundView)
     }
     
-    func setTableView() {
-        reportTableView.dataSource = self
-        reportTableView.delegate = self
-        reportTableView.layer.cornerRadius = 20.0
-        reportTableView.register(UINib(nibName: ReportTableViewCell.className, bundle: nil), forCellReuseIdentifier: ReportTableViewCell.className)
-        }
-
+    @IBAction func changeViewPage(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                // Firstをタップされた時に実行される処理
+                self.performSegue(withIdentifier: "toFirst", sender: nil)
+            case 1:
+                // Secondをタップされた時に実行される処理
+                self.performSegue(withIdentifier: "toSecond", sender: nil)
+            case 2:
+                // Thirdをタップされた時に実行される処理
+                self.performSegue(withIdentifier: "toThird", sender: nil)
+            default:
+                print("")
+            }
+    }
+    
+    
     func setPieChart(){
             
             var dataEntries: [ChartDataEntry] = []
@@ -53,31 +63,4 @@ class ReportViewController: UIViewController {
      
             pieChartDataSet.colors = colors
         }
-}
-
-extension ReportViewController:UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let reportTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReportTableViewCell.className, for: indexPath) as? ReportTableViewCell else {
-                        return UITableViewCell()
-                    }
-        let timeData = realm.objects(TimerModel.self)
-        reportTableViewCell.timeLabel.text = "\(timeData[indexPath.row].time)"
-        let userData = realm.objects(ReportModel.self)
-        reportTableViewCell.dateLabel.text = "\(userData[indexPath.row].date)"
-        reportTableViewCell.categoryLabel.text = "\(userData[indexPath.row].category)"
-        reportTableViewCell.wordLabel.text = "\(userData[indexPath.row].word)"
-        reportTableViewCell.selectionStyle = .none
-                    return reportTableViewCell
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
-    }
-}
-
-extension ReportViewController:UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let userData = realm.objects(ReportModel.self)
-        return userData.count
-    }
 }

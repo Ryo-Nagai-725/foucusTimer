@@ -14,19 +14,22 @@ class SaveViewController: UIViewController {
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var categoryTextField: UITextField!
     @IBOutlet var wordTextField: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var saveButton: UIButton!
-    
-    let categoryPickerView = UIPickerView()
-    var pickerIndex: Int = 0
+    @IBOutlet var categoryPickerView: UIPickerView!
+    @IBOutlet var categoryTextDoneButton: UIButton!
+    @IBOutlet var dataTextDoneButton: UIButton!
     var time = ""
     let realm = try? Realm()
+    var pickerIndex: Int = 0
+    var categoryList = ["勉強", "仕事", "スポーツ", "娯楽", "休憩", "その他"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel.text = time
         saveButton.layer.cornerRadius = 20
-        setupCategoryPickerView()
-        setupCategoryTextFiled()
+        datePicker.backgroundColor = .white
+        setupPickerView()
     }
     
     
@@ -52,6 +55,44 @@ class SaveViewController: UIViewController {
                 present(controller, animated: true, completion: nil)
                 
     }
+    @IBAction func dataTextDoneButton(_ sender: Any) {
+        datePicker.isHidden = true
+        dataTextDoneButton.isHidden = true
+        dataTextDoneButton.isHidden = true
+        // 日付のフォーマット
+                let formatter = DateFormatter()
+
+                //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+                formatter.dateFormat = "yyyy/MM/dd"
+                dateTextField.text = "\(formatter.string(from: datePicker.date))"
+    }
+    @IBAction func categoryTextDoneButton(_ sender: Any) {
+        categoryPickerView.isHidden = true
+        categoryTextDoneButton.isHidden = true
+        dataTextDoneButton.isHidden = true
+    }
+    @IBAction func touchDateText(_ sender: Any) {
+        datePicker.isHidden = false
+        categoryPickerView.isHidden = true
+        dataTextDoneButton.isHidden = false
+        dateTextField.resignFirstResponder()
+    }
+    
+    @IBAction func touchCategoryText(_ sender: Any) {
+        datePicker.isHidden = true
+        categoryPickerView.isHidden = false
+        categoryTextDoneButton.isHidden = false
+        dataTextDoneButton.isHidden = true
+        categoryTextField.resignFirstResponder()
+    }
+    
+    @IBAction func touchWordText(_ sender: Any) {
+        datePicker.isHidden = true
+        categoryPickerView.isHidden = true
+        dataTextDoneButton.isHidden = true
+        categoryTextDoneButton.isHidden = true
+        
+    }
     func addData() {
         let reportModel = ReportModel()
         reportModel.date = dateTextField.text ?? ""
@@ -62,55 +103,42 @@ class SaveViewController: UIViewController {
         }
     }
     
-    func setupCategoryTextFiled() {
-           categoryTextField.delegate = self
-       }
-    //    ピッカービューメソッド
-       
-       func setupCategoryPickerView() {
-           categoryPickerView.delegate = self
-           categoryPickerView.dataSource = self
-           categoryPickerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: categoryPickerView.bounds.size.height)
-           let categoryPV = UIView(frame: categoryPickerView.bounds)
-           categoryPV.backgroundColor = UIColor.white
-           categoryPV.addSubview(categoryPickerView)
-           categoryPickerView.selectRow(0, inComponent: 0, animated: true)
-           
-           // UITextField編集時に表示されるキーボードをpickerViewに置き換える
-           categoryTextField.inputView = categoryPV
-       }
-
-}
-extension SaveViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            categoryTextField.text = CategoryList.shared.category[row]
-            pickerIndex = row
-        }
+    func setupPickerView() {
+        categoryPickerView.delegate = self
+        categoryPickerView.dataSource = self
     }
+}
+
+extension SaveViewController: UIPickerViewDelegate {
+    // UIPickerViewの最初の表示
+        func pickerView(_ pickerView: UIPickerView,
+                        titleForRow row: Int,
+                        forComponent component: Int) -> String? {
+            
+            return categoryList[row]
+        }
+        
+        // UIPickerViewのRowが選択された時の挙動
+        func pickerView(_ pickerView: UIPickerView,
+                        didSelectRow row: Int,
+                        inComponent component: Int) {
+            pickerIndex = row
+            categoryTextField.text = categoryList[row]
+            
+        }
+}
 
 extension SaveViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return CategoryList.shared.category.count
+    // UIPickerViewの列の数
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
         }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return CategoryList.shared.category[row]
-        }
-
-extension SaveViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        resignFirstResponder()
-        return true
-    }
-    
-    internal func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-            categoryTextField.text = CategoryList.shared.category[pickerIndex]
         
-        return true
-    }
+        // UIPickerViewの行数、リストの数
+        func pickerView(_ pickerView: UIPickerView,
+                        numberOfRowsInComponent component: Int) -> Int {
+            return categoryList.count
+        }
+    
+    
 }

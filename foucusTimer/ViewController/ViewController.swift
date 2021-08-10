@@ -13,15 +13,13 @@ import PanModal
 class ViewController: UIViewController {
 
     @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var changePageSeg: UISegmentedControl!
     @IBOutlet var monsterImage: UIImageView!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var stopButton: UIButton!
     @IBOutlet var growButton: UIButton!
     @IBOutlet var treeBackGroundView: UIView!
-    var audioPlayer: AVAudioPlayer?
-    var audioPlayer2: AVAudioPlayer?
     
-    let path = Bundle.main.path(forResource: "nc205000", ofType: "mp3")
     var timer: Timer?
     var timerSecond = 0
     let realm = try! Realm()
@@ -29,19 +27,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        levelUpMusic()
-        endMusic()
         corner()
     }
 
-
+   
+    @IBAction func changeViewPage(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                // Firstをタップされた時に実行される処理
+                self.performSegue(withIdentifier: "toFirst", sender: nil)
+            case 1:
+                // Secondをタップされた時に実行される処理
+                self.performSegue(withIdentifier: "toSecond", sender: nil)
+            case 2:
+                // Thirdをタップされた時に実行される処理
+                self.performSegue(withIdentifier: "toThird", sender: nil)
+            default:
+                print("")
+            }
+    }
+    
+    
     @IBAction func startButton(_ sender: Any) {
         startTimer()
         
     }
     @IBAction func stopButton(_ sender: Any) {
         stopTimer()
-        audioPlayer2?.play()
     }
     @IBAction func growButton(_ sender: Any) {
         presentPanModal(GrowViewController())
@@ -54,24 +66,6 @@ class ViewController: UIViewController {
         }
     }
     
-    //ミュージックメソッド
-    func levelUpMusic() {
-        //プロジェクト内ににあるパスを参照
-        let path = Bundle.main.path(forResource: "growthSound", ofType: "mp3")
-        let url = URL(fileURLWithPath: path!)
-        try! audioPlayer = AVAudioPlayer(contentsOf: url)
-        //事前に一度再生をしておかないとず正しく再生されないことがあるのでこいつを呼び出しておく
-         audioPlayer?.prepareToPlay()
-    }
-    
-    func endMusic() {
-        //プロジェクト内ににあるパスを参照
-        let path = Bundle.main.path(forResource: "end", ofType: "mp3")
-        let url = URL(fileURLWithPath: path!)
-        try! audioPlayer2 = AVAudioPlayer(contentsOf: url)
-        //事前に一度再生をしておかないとず正しく再生されないことがあるのでこいつを呼び出しておく
-         audioPlayer2?.prepareToPlay()
-    }
     // タイマーメソッド
     func startTimer() {
         timer?.invalidate()
@@ -117,10 +111,10 @@ class ViewController: UIViewController {
     }
     
     func corner() {
-        startButton.layer.cornerRadius = 50
-        stopButton.layer.cornerRadius = 50
-        growButton.layer.cornerRadius = 50
-        treeBackGroundView.layer.cornerRadius = 20
+        startButton.layer.cornerRadius = 10
+        stopButton.layer.cornerRadius = 10
+        growButton.layer.cornerRadius = 10
+        treeBackGroundView.layer.cornerRadius = 90
     }
     
     @objc func countTimer() {
@@ -129,28 +123,20 @@ class ViewController: UIViewController {
         updateTimer(second: timerSecond)
         if timerSecond == 10 {
             monsterImage.image = UIImage(named: "tree3")
-            audioPlayer?.play()
         } else if timerSecond == 20 {
             monsterImage.image = UIImage(named: "tree4")
-            audioPlayer?.play()
         } else if timerSecond == 30 {
             monsterImage.image = UIImage(named: "tree5")
-            audioPlayer?.play()
         } else if timerSecond == 40 {
             monsterImage.image = UIImage(named: "tree6")
-            audioPlayer?.play()
         } else if timerSecond == 50 {
             monsterImage.image = UIImage(named: "tree7")
-            audioPlayer?.play()
         } else if timerSecond == 60 {
             monsterImage.image = UIImage(named: "tree8")
-            audioPlayer?.play()
         } else if timerSecond == 70 {
             monsterImage.image = UIImage(named: "tree9")
-            audioPlayer?.play()
         } else if timerSecond == 80 {
             monsterImage.image = UIImage(named: "tree10")
-            audioPlayer?.play()
         }
     }
     

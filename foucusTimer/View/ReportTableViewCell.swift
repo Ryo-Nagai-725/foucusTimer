@@ -10,8 +10,12 @@ import UIKit
 class ReportTableViewCell: UITableViewCell {
 
 
+    @IBOutlet var backGroundView: UIView!
     @IBOutlet var view: UIView!
-    @IBOutlet var monsterImage: UIImageView!
+    @IBOutlet var treeIconImage: UIImageView!
+    @IBOutlet var treeImage: UIImageView!
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var treeBackGroundView: UIView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
@@ -24,6 +28,8 @@ class ReportTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         view.layer.cornerRadius = 20
+        backGroundView.layer.cornerRadius = 20
+        backGroundView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
     }
     
