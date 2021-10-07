@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     @IBOutlet var treeBackGroundView: UIView!
     
     var timer: Timer?
-    var timerSecond = 0
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         corner()
     }
 
@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     
     @IBAction func startButton(_ sender: Any) {
         startTimer()
+        TimerManager.shared.timerManagerDelegate = self
         
     }
     @IBAction func stopButton(_ sender: Any) {
@@ -68,8 +69,7 @@ class ViewController: UIViewController {
     
     // タイマーメソッド
     func startTimer() {
-        timer?.invalidate()
-        timerSecond = 0
+        TimerManager.shared.startTimer()
         timer = Timer.scheduledTimer(
                    timeInterval: 1,
                    target: self,
@@ -77,17 +77,25 @@ class ViewController: UIViewController {
                    userInfo: nil,
                    repeats: true)
         startButton.isEnabled = false
+        growButton.isEnabled = false
+        growButton.alpha = 0.5
         startButton.alpha = 0.5
+        changePageSeg.alpha = 0
     }
     
     func stopTimer() {
-        timer?.invalidate()
+        TimerManager.shared.stopTimer()
         addData()
         let userData = realm.objects(TimerModel.self)
         print("🟥全てのデータ\(userData)")
         timerLabel.text = "00:00:00"
         startButton.alpha = 1
         startButton.isEnabled = true
+        growButton.isEnabled = true
+        changePageSeg.alpha = 1
+        growButton.alpha = 1
+        monsterImage.image = UIImage(named: "hutaba")
+        
     }
     
     func timeString(time: TimeInterval) -> String {
@@ -97,10 +105,6 @@ class ViewController: UIViewController {
            return String(format: "%02d:%02d:%02d", hour, minutes, second)
     }
     
-    func updateTimer(second: Int) {
-            print("updateTimer")
-            timerLabel.text = timeString(time: TimeInterval(second))
-        }
     
     func addData() {
         let timerModel = TimerModel()
@@ -118,26 +122,29 @@ class ViewController: UIViewController {
     }
     
     @objc func countTimer() {
-        timerSecond += 1
-        print(timerSecond)
-        updateTimer(second: timerSecond)
-        if timerSecond == 10 {
+        if TimerManager.shared.timerSecond == 10 {
             monsterImage.image = UIImage(named: "tree3")
-        } else if timerSecond == 20 {
+        } else if (TimerManager.shared.timerSecond == 20) {
             monsterImage.image = UIImage(named: "tree4")
-        } else if timerSecond == 30 {
+        } else if (TimerManager.shared.timerSecond == 30) {
             monsterImage.image = UIImage(named: "tree5")
-        } else if timerSecond == 40 {
+        } else if (TimerManager.shared.timerSecond == 40) {
             monsterImage.image = UIImage(named: "tree6")
-        } else if timerSecond == 50 {
+        } else if (TimerManager.shared.timerSecond == 50) {
             monsterImage.image = UIImage(named: "tree7")
-        } else if timerSecond == 60 {
+        } else if (TimerManager.shared.timerSecond == 60) {
             monsterImage.image = UIImage(named: "tree8")
-        } else if timerSecond == 70 {
+        } else if (TimerManager.shared.timerSecond == 70) {
             monsterImage.image = UIImage(named: "tree9")
-        } else if timerSecond == 80 {
+        } else if (TimerManager.shared.timerSecond == 80){
             monsterImage.image = UIImage(named: "tree10")
         }
     }
-    
+}
+
+extension ViewController: TimerManagerDelegate {
+    func updateTimer(second: Int) {
+        print("updateTimer")
+        timerLabel.text = timeString(time: TimeInterval(second))
+    }
 }

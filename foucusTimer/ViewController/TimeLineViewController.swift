@@ -58,7 +58,7 @@ extension TimeLineViewController: UITableViewDelegate {
                     return reportTableViewCell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 120
     }
 }
 
