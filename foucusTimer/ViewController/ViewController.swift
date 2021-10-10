@@ -109,10 +109,30 @@ class ViewController: UIViewController {
     func addData() {
         let timerModel = TimerModel()
         timerModel.time = timerLabel.text ?? ""
+        if monsterImage.image == UIImage(named: "tree3") {
+            timerModel.imageUrl = "tree3"
+        } else if monsterImage.image == UIImage(named: "tree4") {
+            timerModel.imageUrl = "tree4"
+        } else if monsterImage.image == UIImage(named: "tree5") {
+            timerModel.imageUrl = "tree5"
+        } else if monsterImage.image == UIImage(named: "tree6") {
+            timerModel.imageUrl = "tree6"
+        } else if monsterImage.image == UIImage(named: "tree7") {
+            timerModel.imageUrl = "tree7"
+        } else if monsterImage.image == UIImage(named: "tree8") {
+            timerModel.imageUrl = "tree8"
+        } else if monsterImage.image == UIImage(named: "tree9") {
+            timerModel.imageUrl = "tree9"
+        } else if monsterImage.image == UIImage(named: "tree10") {
+            timerModel.imageUrl = "tree10"
+        } else if monsterImage.image == UIImage(named: "hutaba") {
+            timerModel.imageUrl = "hutaba"
+        }
         try! realm.write {
             realm.add(timerModel)
         }
     }
+    
     
     func corner() {
         startButton.layer.cornerRadius = 10

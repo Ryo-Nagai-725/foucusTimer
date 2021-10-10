@@ -27,7 +27,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3TL-NZ-XYx">
-                                                <rect key="frame" x="23" y="227" width="372" height="252"/>
+                                                <rect key="frame" x="23" y="227" width="372" height="270"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
@@ -35,7 +35,7 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     </view>
                                     <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-qA-JTj" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="8" y="47" width="352" height="184"/>
+                                        <rect key="frame" x="8" y="37" width="352" height="228"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
@@ -72,13 +72,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30個" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StV-ee-6zH">
-                                        <rect key="frame" x="59" y="120" width="80" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uV-Ol-flG">
                                         <rect key="frame" x="233" y="120" width="77" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,6 +88,13 @@
                                         <rect key="frame" x="8" y="14" width="25" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30個" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StV-ee-6zH">
+                                        <rect key="frame" x="17" y="119" width="165" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -116,10 +116,10 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Izr-CM-OGz">
-                                <rect key="frame" x="27" y="595" width="368" height="251"/>
+                                <rect key="frame" x="27" y="612" width="368" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-Ho-pTx" customClass="PieChartView" customModule="Charts">
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-Ho-pTx" customClass="BarChartView" customModule="Charts">
                                         <rect key="frame" x="8" y="47" width="352" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -148,8 +148,10 @@
                     <connections>
                         <outlet property="PieChartView" destination="bNE-qA-JTj" id="D6f-nN-hVg"/>
                         <outlet property="backgroundView" destination="Ngb-3e-vKP" id="0qY-eY-VH6"/>
-                        <segue destination="Mlt-kP-q8o" kind="modal" identifier="toFirst" modalTransitionStyle="partialCurl" id="jEs-yD-DJ0"/>
-                        <segue destination="ih2-My-OZ3" kind="modal" identifier="toThird" modalTransitionStyle="partialCurl" id="jid-gk-Vr4"/>
+                        <outlet property="barChartView" destination="VGR-Ho-pTx" id="ALf-bl-cRh"/>
+                        <outlet property="focusCountLabel" destination="StV-ee-6zH" id="Nyt-xh-hg3"/>
+                        <segue destination="Mlt-kP-q8o" kind="modal" identifier="toFirst" modalTransitionStyle="coverVertical" id="jEs-yD-DJ0"/>
+                        <segue destination="ih2-My-OZ3" kind="modal" identifier="toThird" modalTransitionStyle="coverVertical" id="jid-gk-Vr4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsO-Ah-ih7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,8 +204,8 @@
                     <navigationItem key="navigationItem" id="b2f-MR-Nbi"/>
                     <connections>
                         <outlet property="timeLineTableView" destination="kEa-t4-iXp" id="SNy-1S-O5M"/>
-                        <segue destination="CWm-Ky-75t" kind="modal" identifier="toSecond" modalTransitionStyle="partialCurl" id="fRD-sl-Yn8"/>
-                        <segue destination="Mlt-kP-q8o" kind="modal" identifier="toFirst" modalTransitionStyle="partialCurl" id="C62-1V-Fch"/>
+                        <segue destination="CWm-Ky-75t" kind="modal" identifier="toSecond" modalTransitionStyle="coverVertical" id="fRD-sl-Yn8"/>
+                        <segue destination="Mlt-kP-q8o" kind="modal" identifier="toFirst" modalTransitionStyle="coverVertical" id="C62-1V-Fch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elO-wL-423" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -488,8 +490,8 @@
                         <outlet property="stopButton" destination="VhU-8T-0Xm" id="cqS-LY-EhT"/>
                         <outlet property="timerLabel" destination="jSV-HN-RBg" id="VaA-hq-1h6"/>
                         <outlet property="treeBackGroundView" destination="Y1x-hP-xfX" id="7to-JA-eSF"/>
-                        <segue destination="CWm-Ky-75t" kind="modal" identifier="toSecond" modalTransitionStyle="partialCurl" id="oO9-Qc-gbb"/>
-                        <segue destination="ih2-My-OZ3" kind="modal" identifier="toThird" modalTransitionStyle="partialCurl" id="Gwo-h3-StT"/>
+                        <segue destination="CWm-Ky-75t" kind="modal" identifier="toSecond" modalTransitionStyle="coverVertical" id="oO9-Qc-gbb"/>
+                        <segue destination="ih2-My-OZ3" kind="modal" identifier="toThird" modalTransitionStyle="coverVertical" id="Gwo-h3-StT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dir-9U-fUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -654,7 +656,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="C62-1V-Fch"/>
+        <segue reference="jEs-yD-DJ0"/>
         <segue reference="jid-gk-Vr4"/>
         <segue reference="fRD-sl-Yn8"/>
     </inferredMetricsTieBreakers>

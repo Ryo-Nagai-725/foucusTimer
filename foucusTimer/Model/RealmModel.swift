@@ -10,6 +10,7 @@ import RealmSwift
 
 class TimerModel: Object {
   @objc dynamic var time = ""
+  @objc dynamic var imageUrl = ""
 }
 
 class ReportModel: Object {

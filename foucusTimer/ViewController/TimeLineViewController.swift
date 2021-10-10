@@ -50,6 +50,7 @@ extension TimeLineViewController: UITableViewDelegate {
                     }
         let timeData = realm.objects(TimerModel.self)
         reportTableViewCell.timeLabel.text = "\(timeData[indexPath.row].time)"
+        reportTableViewCell.treeImage.image = UIImage(named: "\(timeData[indexPath.row].imageUrl)")
         let userData = realm.objects(ReportModel.self)
         reportTableViewCell.dateLabel.text = "\(userData[indexPath.row].date)"
         reportTableViewCell.categoryLabel.text = "\(userData[indexPath.row].category)"
