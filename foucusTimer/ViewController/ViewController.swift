@@ -125,7 +125,7 @@ class ViewController: UIViewController {
             timerModel.imageUrl = "tree9"
         } else if monsterImage.image == UIImage(named: "tree10") {
             timerModel.imageUrl = "tree10"
-        } else if monsterImage.image == UIImage(named: "hutaba") {
+        } else {
             timerModel.imageUrl = "hutaba"
         }
         try! realm.write {
