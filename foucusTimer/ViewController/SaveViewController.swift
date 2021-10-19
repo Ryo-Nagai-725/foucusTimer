@@ -91,7 +91,10 @@ class SaveViewController: UIViewController {
         categoryPickerView.isHidden = true
         dataTextDoneButton.isHidden = true
         categoryTextDoneButton.isHidden = true
-        
+    }
+    
+    @IBAction func closeKeyButton(_ sender: Any) {
+        wordTextField.resignFirstResponder()
     }
     func addData() {
         let reportModel = ReportModel()
@@ -142,3 +145,4 @@ extension SaveViewController: UIPickerViewDataSource {
     
     
 }
+

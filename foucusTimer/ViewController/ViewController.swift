@@ -142,21 +142,21 @@ class ViewController: UIViewController {
     }
     
     @objc func countTimer() {
-        if TimerManager.shared.timerSecond == 10 {
+        if TimerManager.shared.timerSecond == 600 {
             monsterImage.image = UIImage(named: "tree3")
-        } else if (TimerManager.shared.timerSecond == 20) {
+        } else if (TimerManager.shared.timerSecond == 1200) {
             monsterImage.image = UIImage(named: "tree4")
-        } else if (TimerManager.shared.timerSecond == 30) {
+        } else if (TimerManager.shared.timerSecond == 1800) {
             monsterImage.image = UIImage(named: "tree5")
-        } else if (TimerManager.shared.timerSecond == 40) {
+        } else if (TimerManager.shared.timerSecond == 2400) {
             monsterImage.image = UIImage(named: "tree6")
-        } else if (TimerManager.shared.timerSecond == 50) {
+        } else if (TimerManager.shared.timerSecond == 3000) {
             monsterImage.image = UIImage(named: "tree7")
-        } else if (TimerManager.shared.timerSecond == 60) {
+        } else if (TimerManager.shared.timerSecond == 3600) {
             monsterImage.image = UIImage(named: "tree8")
-        } else if (TimerManager.shared.timerSecond == 70) {
+        } else if (TimerManager.shared.timerSecond == 4200) {
             monsterImage.image = UIImage(named: "tree9")
-        } else if (TimerManager.shared.timerSecond == 80){
+        } else if (TimerManager.shared.timerSecond == 4800){
             monsterImage.image = UIImage(named: "tree10")
         }
     }

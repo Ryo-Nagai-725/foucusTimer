@@ -14,21 +14,18 @@
 		2A11A91E267B8B27001ED27B /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A11A91C267B8B27001ED27B /* ReportTableViewCell.swift */; };
 		2A11A91F267B8B27001ED27B /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A11A91D267B8B27001ED27B /* ReportTableViewCell.xib */; };
 		2A14F04A267F71D20051F34F /* GrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14F049267F71D10051F34F /* GrowViewController.swift */; };
+		2A38DF2D271DB2F7000BE6DD /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38DF2C271DB2F7000BE6DD /* QuestionnaireViewController.swift */; };
+		2A38DF2F271DB7DC000BE6DD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A38DF2E271DB7DC000BE6DD /* WebKit.framework */; };
 		2A47D5A526C0CC0B00406B46 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47D5A426C0CC0A00406B46 /* TimeLineViewController.swift */; };
 		2A85DD522666173000F7B174 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A85DD512666173000F7B174 /* TimerManager.swift */; };
-		2A85DD54266D144900F7B174 /* levelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A85DD53266D144900F7B174 /* levelUp.wav */; };
-		2A85DD56266E6B0300F7B174 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A85DD55266E6B0300F7B174 /* end.mp3 */; };
-		2A89F42C2693341E004B3990 /* growthSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A89F42B2693341D004B3990 /* growthSound.mp3 */; };
 		2AC88F55265CD66B007772B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC88F54265CD66B007772B1 /* AppDelegate.swift */; };
 		2AC88F57265CD66B007772B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC88F56265CD66B007772B1 /* SceneDelegate.swift */; };
 		2AC88F59265CD66B007772B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC88F58265CD66B007772B1 /* ViewController.swift */; };
 		2AC88F5C265CD66B007772B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC88F5A265CD66B007772B1 /* Main.storyboard */; };
 		2AC88F5E265CD670007772B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC88F5D265CD670007772B1 /* Assets.xcassets */; };
 		2AC88F61265CD670007772B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC88F5F265CD670007772B1 /* LaunchScreen.storyboard */; };
-		2AD4D9D126A6A386000427A6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4D9D026A6A386000427A6 /* CalendarViewController.swift */; };
 		2AD4D9D426A6A963000427A6 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4D9D226A6A963000427A6 /* CalendarTableViewCell.swift */; };
 		2AD4D9D526A6A963000427A6 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4D9D326A6A963000427A6 /* CalendarTableViewCell.xib */; };
-		2AD4D9D726A6B277000427A6 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4D9D626A6B277000427A6 /* AddTodoViewController.swift */; };
 		C6B083D78A991E1D6FB9A606 /* Pods_foucusTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DB1609C7D698C7D154ED55 /* Pods_foucusTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,11 +37,10 @@
 		2A11A91C267B8B27001ED27B /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		2A11A91D267B8B27001ED27B /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		2A14F049267F71D10051F34F /* GrowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowViewController.swift; sourceTree = "<group>"; };
+		2A38DF2C271DB2F7000BE6DD /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		2A38DF2E271DB7DC000BE6DD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2A47D5A426C0CC0A00406B46 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		2A85DD512666173000F7B174 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
-		2A85DD53266D144900F7B174 /* levelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelUp.wav; sourceTree = "<group>"; };
-		2A85DD55266E6B0300F7B174 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
-		2A89F42B2693341D004B3990 /* growthSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = growthSound.mp3; sourceTree = "<group>"; };
 		2AC88F51265CD66B007772B1 /* foucusTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foucusTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC88F54265CD66B007772B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC88F56265CD66B007772B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,10 +49,8 @@
 		2AC88F5D265CD670007772B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AC88F60265CD670007772B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AC88F62265CD670007772B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AD4D9D026A6A386000427A6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2AD4D9D226A6A963000427A6 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		2AD4D9D326A6A963000427A6 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
-		2AD4D9D626A6B277000427A6 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		32DB1609C7D698C7D154ED55 /* Pods_foucusTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foucusTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		470D5279B5F284B4D6B4B059 /* Pods-foucusTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foucusTimer.debug.xcconfig"; path = "Target Support Files/Pods-foucusTimer/Pods-foucusTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		543982339961A56581846A60 /* Pods-foucusTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foucusTimer.release.xcconfig"; path = "Target Support Files/Pods-foucusTimer/Pods-foucusTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A38DF2F271DB7DC000BE6DD /* WebKit.framework in Frameworks */,
 				C6B083D78A991E1D6FB9A606 /* Pods_foucusTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,9 +105,6 @@
 				2AC88F68265CDA80007772B1 /* View */,
 				2AC88F6A265CDAB2007772B1 /* ViewController */,
 				2AC88F5A265CD66B007772B1 /* Main.storyboard */,
-				2A85DD53266D144900F7B174 /* levelUp.wav */,
-				2A89F42B2693341D004B3990 /* growthSound.mp3 */,
-				2A85DD55266E6B0300F7B174 /* end.mp3 */,
 				2AC88F5D265CD670007772B1 /* Assets.xcassets */,
 				2AC88F5F265CD670007772B1 /* LaunchScreen.storyboard */,
 				2AC88F62265CD670007772B1 /* Info.plist */,
@@ -147,9 +139,8 @@
 				2A11A90F266E7520001ED27B /* ReportViewController.swift */,
 				2A11A917267B7C67001ED27B /* SaveViewController.swift */,
 				2A14F049267F71D10051F34F /* GrowViewController.swift */,
-				2AD4D9D026A6A386000427A6 /* CalendarViewController.swift */,
-				2AD4D9D626A6B277000427A6 /* AddTodoViewController.swift */,
 				2A47D5A426C0CC0A00406B46 /* TimeLineViewController.swift */,
+				2A38DF2C271DB2F7000BE6DD /* QuestionnaireViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -157,6 +148,7 @@
 		63CE5FB3845833C163F6F32E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A38DF2E271DB7DC000BE6DD /* WebKit.framework */,
 				32DB1609C7D698C7D154ED55 /* Pods_foucusTimer.framework */,
 			);
 			name = Frameworks;
@@ -230,10 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A89F42C2693341E004B3990 /* growthSound.mp3 in Resources */,
-				2A85DD54266D144900F7B174 /* levelUp.wav in Resources */,
 				2AC88F61265CD670007772B1 /* LaunchScreen.storyboard in Resources */,
-				2A85DD56266E6B0300F7B174 /* end.mp3 in Resources */,
 				2AC88F5E265CD670007772B1 /* Assets.xcassets in Resources */,
 				2AC88F5C265CD66B007772B1 /* Main.storyboard in Resources */,
 				2A11A91F267B8B27001ED27B /* ReportTableViewCell.xib in Resources */,
@@ -290,14 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD4D9D126A6A386000427A6 /* CalendarViewController.swift in Sources */,
 				2A11A91E267B8B27001ED27B /* ReportTableViewCell.swift in Sources */,
 				2AC88F59265CD66B007772B1 /* ViewController.swift in Sources */,
 				2A85DD522666173000F7B174 /* TimerManager.swift in Sources */,
+				2A38DF2D271DB2F7000BE6DD /* QuestionnaireViewController.swift in Sources */,
 				2AC88F55265CD66B007772B1 /* AppDelegate.swift in Sources */,
 				2A11A912267B7567001ED27B /* RealmModel.swift in Sources */,
 				2A11A910266E7520001ED27B /* ReportViewController.swift in Sources */,
-				2AD4D9D726A6B277000427A6 /* AddTodoViewController.swift in Sources */,
 				2A11A91B267B8AD7001ED27B /* NSObjectExt.swift in Sources */,
 				2A47D5A526C0CC0B00406B46 /* TimeLineViewController.swift in Sources */,
 				2A14F04A267F71D20051F34F /* GrowViewController.swift in Sources */,
