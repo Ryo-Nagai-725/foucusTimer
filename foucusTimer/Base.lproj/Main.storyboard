@@ -264,7 +264,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="さあ、育てよう！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-eB-IPP">
-                                <rect key="frame" x="20" y="163" width="388" height="26"/>
+                                <rect key="frame" x="129" y="163" width="171" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -308,7 +308,6 @@
                         <outlet property="monsterImage" destination="W8L-D6-iy3" id="XhP-Kw-ZLn"/>
                         <outlet property="startButton" destination="qXG-w3-LGT" id="Dnc-LZ-Dap"/>
                         <outlet property="stopButton" destination="VhU-8T-0Xm" id="cqS-LY-EhT"/>
-                        <outlet property="supportText" destination="Qqf-eB-IPP" id="Yfk-UE-nH7"/>
                         <outlet property="timerLabel" destination="jSV-HN-RBg" id="VaA-hq-1h6"/>
                         <outlet property="treeBackGroundView" destination="Y1x-hP-xfX" id="7to-JA-eSF"/>
                         <segue destination="CWm-Ky-75t" kind="modal" identifier="toSecond" modalTransitionStyle="coverVertical" id="oO9-Qc-gbb"/>
@@ -317,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dir-9U-fUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487.85046728971957" y="-450.32397408207345"/>
+            <point key="canvasLocation" x="488" y="-450"/>
         </scene>
         <!--Save View Controller-->
         <scene sceneID="AuJ-49-XAg">
@@ -546,7 +545,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jEs-yD-DJ0"/>
-        <segue reference="Gwo-h3-StT"/>
+        <segue reference="jid-gk-Vr4"/>
         <segue reference="oO9-Qc-gbb"/>
     </inferredMetricsTieBreakers>
     <resources>
