@@ -64,6 +64,7 @@ internal extension TimerManager {
 
 private extension TimerManager {
     @objc func updateTimer() {
+        print("a")
         timerSecond += 1
         print(timerSecond)
         timerManagerDelegate?.updateTimer(second: timerSecond)
